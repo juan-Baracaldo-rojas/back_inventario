@@ -3,7 +3,12 @@ const app= express();
 const mysql = require('mysql');
 const cors =require("cors")
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://dncateringysuministros.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true 
+  }));
 app.use(express.json());
 
 /*const db = mysql.createConnection({
